@@ -1,0 +1,11 @@
+<h1>Shopping cart</h1>
+
+<ul>
+  <% @shop.each do |item| %>
+    <li>
+      <a href="<%= article_path(article) %>">
+        <%= item.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
