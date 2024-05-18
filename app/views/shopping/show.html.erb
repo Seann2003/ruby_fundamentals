@@ -1,3 +1,18 @@
-<h1><%= @article.title %></h1>
+<h1><%= @listOfItems.itemName %></h1>
 
-<p><%= @article.body %></p>
+<p><%= @listOfItems.description %></p>
+<p><%= @listOfItems.itemPrice %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_shopping_path(@listOfItems) %></li>
+  <li><%= link_to "Destroy", shopping_path(@listOfItems) , data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<h2>Comments</h2>
+<%= render "shared/comment" %>
+
+<h2>Add a comment:</h2>
+<%= render partial: "shared/form" %>

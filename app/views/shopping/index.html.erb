@@ -1,11 +1,10 @@
-<h1>Shopping cart</h1>
+<h1>Shopping Cart</h1>
 
 <ul>
-  <% @shop.each do |item| %>
+  <% @shoppings.each do |shopping| %>
     <li>
-      <a href="<%= article_path(article) %>">
-        <%= item.title %>
-      </a>
+      <%= link_to shopping.itemName, shopping_path(shopping) %> 
     </li>
   <% end %>
+  <%= link_to "Add new cart items", new_shopping_path %>
 </ul>
